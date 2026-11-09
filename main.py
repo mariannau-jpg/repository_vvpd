@@ -75,7 +75,7 @@ def positive_above_main_diagonal(matrix):
     count_above_main_diagonal = 0
     for i in range(lines):
         for j in range(colums):
-            if i > j and matrix[i, j] > 0:
+            if i < j and matrix[i, j] > 0:
                 count_above_main_diagonal += 1
     return count_above_main_diagonal
 
@@ -89,6 +89,7 @@ def max_average(matrix):
             max_i = i
     print(f'Номер строки, для которой среднеарифметическое '
           f'значение ее элементов имеет максимальное значение: {max_i + 1}')
+
 
 def positive_sum(matrix):
     total_sum = 0

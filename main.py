@@ -52,6 +52,16 @@ while command != 0:
 0. Выйти из программы
 '''))
 
+
+def sum_lines_columns(matrix):
+    sum_lines = np.sum(matrix, axis=1)
+    sum_columns = np.sum(matrix, axis=0)
+    for i in range(len(sum_lines)):
+        print(f'Сумма элементов строки {i + 1}: {sum_lines[i]}')
+    for i in range(len(sum_columns)):
+        print(f'Сумма элементов столбца {i + 1}: {sum_columns[i]}')
+
+
 point_of_menu = int(input('''Меню функций:
 1. Вычисление суммы элементов каждого столбца и строки
 2. Вывод главной и побочной диагонали двумерного массива
@@ -62,7 +72,7 @@ point_of_menu = int(input('''Меню функций:
 '''))
 while point_of_menu != 0:
     if point_of_menu == 1:
-        pass
+        sum_lines_columns(matrix)
     elif point_of_menu == 2:
         pass
     elif point_of_menu == 3:
@@ -71,3 +81,11 @@ while point_of_menu != 0:
         pass
     elif point_of_menu == 5:
         pass
+    point_of_menu = int(input('''Меню функций:
+1. Вычисление суммы элементов каждого столбца и строки
+2. Вывод главной и побочной диагонали двумерного массива
+3. Количество положительных элементов массива, расположенных выше главной диагонали
+4. Номер строки, для которой среднеарифметическое значение ее элементов имеет максимальное значение
+5. Вычисление суммы тех положительных элементов массива, которые стоят в строках, не содержащих нулевых элементов
+0. Выйти из программы
+'''))

@@ -62,6 +62,13 @@ def sum_lines_columns(matrix):
         print(f'Сумма элементов столбца {i + 1}: {sum_columns[i]}')
 
 
+def main_secondary_diagonals(matrix):
+    main_diagonal = np.diag(matrix)
+    secondary_diagonal = np.diag(np.fliplr(matrix))
+    print(f'Элементы главной диагонали: {main_diagonal}')
+    print(f'Элементы побочной диагонали: {secondary_diagonal}')
+
+
 point_of_menu = int(input('''Меню функций:
 1. Вычисление суммы элементов каждого столбца и строки
 2. Вывод главной и побочной диагонали двумерного массива
@@ -74,7 +81,7 @@ while point_of_menu != 0:
     if point_of_menu == 1:
         sum_lines_columns(matrix)
     elif point_of_menu == 2:
-        pass
+        main_secondary_diagonals(matrix)
     elif point_of_menu == 3:
         pass
     elif point_of_menu == 4:

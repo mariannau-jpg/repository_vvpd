@@ -80,6 +80,17 @@ def positive_above_main_diagonal(matrix):
     return count_above_main_diagonal
 
 
+def max_average(matrix):
+    max_av = -float('inf')
+    max_i = 0
+    for i in range(len(matrix)):
+        if float(np.mean(matrix[i])) > max_av:
+            max_av = float(np.mean(matrix[i]))
+            max_i = i
+    print(f'Номер строки, для которой среднеарифметическое '
+          f'значение ее элементов имеет максимальное значение: {max_i + 1}')
+
+
 point_of_menu = int(input('''Меню функций:
 1. Вычисление суммы элементов каждого столбца и строки
 2. Вывод главной и побочной диагонали двумерного массива
@@ -97,7 +108,7 @@ while point_of_menu != 0:
         print(f'Количество положительных элементов массива, '
               f'расположенных выше главной диагонали: {positive_above_main_diagonal(matrix)}')
     elif point_of_menu == 4:
-        pass
+        max_average(matrix)
     elif point_of_menu == 5:
         pass
     point_of_menu = int(input('''Меню функций:
